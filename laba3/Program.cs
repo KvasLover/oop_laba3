@@ -174,7 +174,7 @@ namespace laba3
     {
         static void Main(string[] args)
         {
-            Console.Write($"Enter id: "); 
+            Console.Write($"Enter id: ");
             int a = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Enter floor: ");
             int b = Convert.ToInt32(Console.ReadLine());
@@ -190,10 +190,10 @@ namespace laba3
             string g = Console.ReadLine();
             Console.Write($"Enter building_type: ");
             string h = Console.ReadLine();
-            House house = new House(a,b,c,d,e,f,g,h);
+            House house = new House(a, b, c, d, e, f, g, h);
             house.Info();
             int res;
-            house.Age(ref f,out res);
+            house.Age(ref f, out res);
             Console.WriteLine($"Age of building: {res}");
             House house2 = new House();
             Console.WriteLine($"Тип объекта: {house2.GetType()}");
@@ -215,10 +215,10 @@ namespace laba3
             int n = 2, x = 0, y = x; //a)
             int min = 1, max = 2; //b)
             House[] Mas = new House[3];
-            Mas[0]=house;
+            Mas[0] = house;
             Mas[1] = house2;
             Mas[2] = house3;
-            for(int i=0;i<3;i++)
+            for (int i = 0; i < 3; i++)
             {
                 if (Mas[i].amount == n)
                     x++;
@@ -228,6 +228,17 @@ namespace laba3
             Console.WriteLine($"Квартир, имеющих 2 комнаты: {x}");
             Console.WriteLine($"Квартир, имеющих 2 комнаты и находящиеся между 1 и 2 этажами включительно: {y}");
 
+            var who = new {
+                id = 1645,
+                floor = 5,
+                square = "Pushkina",
+                amount = 2,
+                flat_number = 247,
+                year = 2015,
+                street = "Gromova",
+                building_type = "block"
+            };
+            Console.WriteLine($"\nid: {who.id}, floor: {who.floor}, square: {who.square}, amount: {who.amount}, flat_number: {who.flat_number}, year: {who.year}, street: {who.street}, building_type: {who.building_type}");
         }
     }
 }
