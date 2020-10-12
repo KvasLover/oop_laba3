@@ -7,9 +7,88 @@ namespace laba3
     class House
     {
         const int const1 = 10; //константное поле
+        
         readonly int id; //поле "readonly"
-        public int floor, amount=6, flat_number=25, year=2016;
-        public string square="Circle", street="Kiseleva", building_type="type";
+        private int floor, amount=6, flat_number=25, year=2016;
+        public string square = "Circle", street = "Kiseleva", building_type = "type";
+        public int Floor
+        {
+            set
+            {             
+                floor = value;
+            }
+            get
+            {
+                return floor;
+            }
+        }
+        public int Amount
+        {
+            private set
+            {
+                amount = value;
+            }
+            get
+            {
+                return amount;
+            }
+        } //тут set с ограниченным доступом
+        private int Flat_number
+        {
+            set
+            {
+                flat_number = value;
+            }
+            get
+            {
+                return flat_number;
+            }
+        }
+        private int Year
+        {
+            set
+            {
+                year = value;
+            }
+            get
+            {
+                return year;
+            }
+        }
+        private string Square
+        {
+            set
+            {
+                square = value;
+            }
+            get
+            {
+                return square;
+            }
+        }
+        private string Street
+        {
+            set
+            {
+                street = value;
+            }
+            get
+            {
+                return street;
+            }
+        }
+        private string Building_type
+        {
+            set
+            {
+                building_type = value;
+            }
+            get
+            {
+                return building_type;
+            }
+        }
+
         public House(int id, int floor, string square, int amount, int flat_number, int year, string street, string building_type) //конструктор c параметром
         {
             this.id = id;
@@ -60,7 +139,7 @@ namespace laba3
     {
         static void Main(string[] args)
         {
-          /*  Console.Write($"Enter id: "); 
+            Console.Write($"Enter id: "); 
             int a = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Enter floor: ");
             int b = Convert.ToInt32(Console.ReadLine());
@@ -86,10 +165,15 @@ namespace laba3
             House house3 = new House(3, 3);
             Console.WriteLine();
             house3.Info();
-            */
-            House house4 = new House();
+
+            house3.Floor = 1000;
             Console.WriteLine();
-            house4.Info();
+            house3.Info();
+
+
+            /*House house4 = new House();
+            Console.WriteLine();
+            house4.Info();*/
 
         }
     }
