@@ -6,7 +6,8 @@ namespace laba3
 {
     class House
     {
-        public int id, floor, amount=6, flat_number=25, year=2016;
+        readonly int id; //поле "readonly"
+        public int floor, amount=6, flat_number=25, year=2016;
         public string square="Circle", street="Kiseleva", building_type="type";
         public House(int id, int floor, string square, int amount, int flat_number, int year, string street, string building_type) //конструктор c параметром
         {
@@ -52,6 +53,7 @@ namespace laba3
         {
             a = "Closed construct";
         }
+
     }
     class Program
     {
