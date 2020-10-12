@@ -6,6 +6,7 @@ namespace laba3
 {
     class House
     {
+        const int const1 = 10; //константное поле
         readonly int id; //поле "readonly"
         public int floor, amount=6, flat_number=25, year=2016;
         public string square="Circle", street="Kiseleva", building_type="type";
