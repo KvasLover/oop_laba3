@@ -44,9 +44,13 @@ namespace laba3
             int time1 = 2020 - year;
             return time1;
         }
-        static House()
+        static House() //статический конструктор
         {
             Console.WriteLine("'In static constructor'");
+        }
+        private House(string a) //закрытый конструктор
+        {
+            a = "Closed construct";
         }
     }
     class Program
