@@ -11,6 +11,7 @@ namespace laba3
         readonly int id; //поле "readonly"
         private int floor, amount=6, flat_number=25, year=2016;
         public string square = "Circle", street = "Kiseleva", building_type = "type";
+        static int obj_amount=0;
         public int Floor
         {
             set
@@ -91,6 +92,7 @@ namespace laba3
 
         public House(int id, int floor, string square, int amount, int flat_number, int year, string street, string building_type) //конструктор c параметром
         {
+            obj_amount++;
             this.id = id;
             this.floor = floor;
             this.square = square;
@@ -102,6 +104,7 @@ namespace laba3
         }
         public House() //конструктор без параметров
         {
+            obj_amount++;
             id = 1645;
             floor = 5;
             square = "Pushkina";
@@ -111,8 +114,9 @@ namespace laba3
             street = "Gromova";
             building_type = "block";
         }
-        public House(int id, int floor) //конструктор по умоолчанию
+        public House(int id, int floor) //конструктор по умолчанию
         {
+            obj_amount++;
             this.id = id;
             this.floor = floor;
         }
@@ -134,11 +138,25 @@ namespace laba3
         }
 
     }
+    public partial class Class
+    {
+        public void Meth()
+        {
+            Console.Write("\nHel");
+        }
+    }
+    public partial class Class
+    {
+        public void Meth2()
+        {
+            Console.WriteLine("lo");
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write($"Enter id: "); 
+            /*Console.Write($"Enter id: "); 
             int a = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Enter floor: ");
             int b = Convert.ToInt32(Console.ReadLine());
@@ -168,12 +186,13 @@ namespace laba3
 
             house3.Floor = 1000;
             Console.WriteLine();
-            house3.Info();
+            house3.Info();*/
+            //Console.WriteLine($"{house3.obj_amount}");
 
+            Class a = new Class();
+            a.Meth();
+            a.Meth2();
 
-            /*House house4 = new House();
-            Console.WriteLine();
-            house4.Info();*/
 
         }
     }
