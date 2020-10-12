@@ -6,6 +6,7 @@ namespace laba3
 {
     class House
     {
+        //-----------------------------------partial-классы
         public partial class Class
         {
             public void Meth()
@@ -20,13 +21,18 @@ namespace laba3
                 Console.WriteLine("lo");
             }
         }
-        const int const1 = 10; //константное поле
-        
+
+        //-----------------------------------поля
+
+        const int const1 = 10; //константное поле       
         readonly int id; //поле "readonly"
         public int amount = 6, floor;
         private int flat_number=25, year=2016;
         public string square = "Circle", street = "Kiseleva", building_type = "type";
         public static int obj_amount=0;
+
+        //-----------------------------------get-set
+
         public int Floor
         {
             set
@@ -105,6 +111,8 @@ namespace laba3
             }
         }
 
+        //-----------------------------------переопределения
+
         public override bool Equals(object var)
         {
             return base.Equals(var);
@@ -117,6 +125,8 @@ namespace laba3
         {
             return base.ToString();
         }
+
+        //-----------------------------------конструкторы
 
         public House(int id, int floor, string square, int amount, int flat_number, int year, string street, string building_type) //конструктор c параметром
         {
