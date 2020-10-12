@@ -6,10 +6,25 @@ namespace laba3
 {
     class House
     {
+        public partial class Class
+        {
+            public void Meth()
+            {
+                Console.Write("\nHel");
+            }
+        }
+        public partial class Class
+        {
+            public void Meth2()
+            {
+                Console.WriteLine("lo");
+            }
+        }
         const int const1 = 10; //константное поле
         
         readonly int id; //поле "readonly"
-        private int floor, amount=6, flat_number=25, year=2016;
+        public int amount = 6, floor;
+        private int flat_number=25, year=2016;
         public string square = "Circle", street = "Kiseleva", building_type = "type";
         static int obj_amount=0;
         public int Floor
@@ -138,25 +153,11 @@ namespace laba3
         }
 
     }
-    public partial class Class
-    {
-        public void Meth()
-        {
-            Console.Write("\nHel");
-        }
-    }
-    public partial class Class
-    {
-        public void Meth2()
-        {
-            Console.WriteLine("lo");
-        }
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            /*Console.Write($"Enter id: "); 
+            Console.Write($"Enter id: "); 
             int a = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Enter floor: ");
             int b = Convert.ToInt32(Console.ReadLine());
@@ -186,13 +187,28 @@ namespace laba3
 
             house3.Floor = 1000;
             Console.WriteLine();
-            house3.Info();*/
+            house3.Info();
             //Console.WriteLine($"{house3.obj_amount}");
 
-            Class a = new Class();
-            a.Meth();
-            a.Meth2();
+            House.Class var = new House.Class();
+            var.Meth();
+            var.Meth2();
 
+            int n = 2, x = 0, y = x; //a)
+            int min = 1, max = 2; //b)
+            House[] Mas = new House[3];
+            Mas[0]=house;
+            Mas[1] = house2;
+            Mas[2] = house3;
+            for(int i=0;i<3;i++)
+            {
+                if (Mas[i].amount == n)
+                    x++;
+                if (Mas[i].amount == n && Mas[i].floor >= min && Mas[i].floor <= max)
+                    y++;
+            }
+            Console.WriteLine($"Квартир, имеющих 2 комнаты: {x}");
+            Console.WriteLine($"Квартир, имеющих 2 комнаты и находящиеся между 1 и 2 этажами включительно: {y}");
 
         }
     }
