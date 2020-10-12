@@ -6,16 +6,16 @@ namespace laba3
 {
     class House
     {
-        public int id, floor, amount, flat_number, time;
-        public string square, street, building_type;
-        public House(int id, int floor, string square, int amount, int flat_number, int time, string street, string building_type) //конструктор c параметром
+        public int id, floor, amount=6, flat_number=25, year=2016;
+        public string square="Circle", street="Kiseleva", building_type="type";
+        public House(int id, int floor, string square, int amount, int flat_number, int year, string street, string building_type) //конструктор c параметром
         {
             this.id = id;
             this.floor = floor;
             this.square = square;
             this.amount = amount;
             this.flat_number = flat_number;
-            this.time = time;
+            this.year = year;
             this.street = street;
             this.building_type = building_type;
         }
@@ -26,16 +26,22 @@ namespace laba3
             square = "Pushkina";
             amount = 2;
             flat_number = 247;
-            time = 2015;
-
+            year = 2015;
+            street = "Gromova";
+            building_type = "block";
+        }
+        public House(int id, int floor) //конструктор по умоолчанию
+        {
+            this.id = id;
+            this.floor = floor;
         }
         public void Info() //метод
         {
-            Console.WriteLine($"{id} {floor} {square} {amount} {flat_number} {time} {street} {building_type}");
+            Console.WriteLine($"{id} {floor} {square} {amount} {flat_number} {year} {street} {building_type}");
         }
-        public int Age(int time)
+        public int Age(int year)
         {
-            int time1 = 2020 - time;
+            int time1 = 2020 - year;
             return time1;
         }
     }
@@ -53,7 +59,7 @@ namespace laba3
             int d = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Enter flat_number: ");
             int e = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Enter expluatation time: ");
+            Console.Write($"Enter expluatation year: ");
             int f = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Enter street: ");
             string g = Console.ReadLine();
@@ -63,6 +69,12 @@ namespace laba3
             house.Info();
             int res = house.Age(f);
             Console.WriteLine($"Age of building: {res}");
+            House house2 = new House();
+            Console.WriteLine();
+            house2.Info();
+            House house3 = new House(3, 3);
+            Console.WriteLine();
+            house3.Info();
         }
     }
 }
