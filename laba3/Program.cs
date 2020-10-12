@@ -105,6 +105,19 @@ namespace laba3
             }
         }
 
+        public override bool Equals(object var)
+        {
+            return base.Equals(var);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
         public House(int id, int floor, string square, int amount, int flat_number, int year, string street, string building_type) //конструктор c параметром
         {
             obj_amount++;
