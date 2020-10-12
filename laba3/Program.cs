@@ -8,7 +8,7 @@ namespace laba3
     {
         public int id, floor, amount, flat_number, time;
         public string square, street, building_type;
-        public House(int id, int floor, string square, int amount, int flat_number, int time, string street, string building_type) //конструктор
+        public House(int id, int floor, string square, int amount, int flat_number, int time, string street, string building_type) //конструктор c параметром
         {
             this.id = id;
             this.floor = floor;
@@ -18,6 +18,16 @@ namespace laba3
             this.time = time;
             this.street = street;
             this.building_type = building_type;
+        }
+        public House() //конструктор без параметров
+        {
+            id = 1645;
+            floor = 5;
+            square = "Pushkina";
+            amount = 2;
+            flat_number = 247;
+            time = 2015;
+
         }
         public void Info() //метод
         {
