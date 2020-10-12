@@ -26,7 +26,7 @@ namespace laba3
         public int amount = 6, floor;
         private int flat_number=25, year=2016;
         public string square = "Circle", street = "Kiseleva", building_type = "type";
-        static int obj_amount=0;
+        public static int obj_amount=0;
         public int Floor
         {
             set
@@ -139,6 +139,10 @@ namespace laba3
         {
             Console.WriteLine($"{id} {floor} {square} {amount} {flat_number} {year} {street} {building_type}");
         }
+        public static void Info2() //статический метод вывода инф-и об объектах
+        {
+            Console.WriteLine("Объекты собержат поля: id, Номер квартиры, Площадь,Этаж, Количество комнат, Улица, Тип здания, Срок эксплуатации");
+        }
         public void Age(ref int year, out int time1) //метод с ref и out
         {
             time1 = 2020 - year;
@@ -179,6 +183,7 @@ namespace laba3
             house.Age(ref f,out res);
             Console.WriteLine($"Age of building: {res}");
             House house2 = new House();
+            Console.WriteLine($"Тип объекта: {house2.GetType()}");
             Console.WriteLine();
             house2.Info();
             House house3 = new House(3, 3);
@@ -188,7 +193,7 @@ namespace laba3
             house3.Floor = 1000;
             Console.WriteLine();
             house3.Info();
-            //Console.WriteLine($"{house3.obj_amount}");
+            Console.WriteLine($"Объектов класса House: {House.obj_amount}");
 
             House.Class var = new House.Class();
             var.Meth();
