@@ -120,10 +120,9 @@ namespace laba3
         {
             Console.WriteLine($"{id} {floor} {square} {amount} {flat_number} {year} {street} {building_type}");
         }
-        public int Age(int year)
+        public void Age(ref int year, out int time1) //метод с ref и out
         {
-            int time1 = 2020 - year;
-            return time1;
+            time1 = 2020 - year;
         }
         static House() //статический конструктор
         {
@@ -157,7 +156,8 @@ namespace laba3
             string h = Console.ReadLine();
             House house = new House(a,b,c,d,e,f,g,h);
             house.Info();
-            int res = house.Age(f);
+            int res;
+            house.Age(ref f,out res);
             Console.WriteLine($"Age of building: {res}");
             House house2 = new House();
             Console.WriteLine();
