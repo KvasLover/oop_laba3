@@ -44,12 +44,16 @@ namespace laba3
             int time1 = 2020 - year;
             return time1;
         }
+        static House()
+        {
+            Console.WriteLine("'In static constructor'");
+        }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.Write($"Enter id: "); 
+          /*  Console.Write($"Enter id: "); 
             int a = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Enter floor: ");
             int b = Convert.ToInt32(Console.ReadLine());
@@ -75,6 +79,11 @@ namespace laba3
             House house3 = new House(3, 3);
             Console.WriteLine();
             house3.Info();
+            */
+            House house4 = new House();
+            Console.WriteLine();
+            house4.Info();
+
         }
     }
 }
